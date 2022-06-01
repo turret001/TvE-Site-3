@@ -131,7 +131,16 @@ margin-right: 60px;
 
 .action{
   background-color: var(--laurel-green);
+  display: flex;
+  flex-direction: row;
 }
+.action-left {width: 50%; display: flex; flex-direction: column; justify-content: center; }
+.action-left h2, .action-left h3, .action-left p{color: white; text-align: center;}
+.action-left h2{font-size: 4em; font-weight: 100;}
+.action-left h3{font-size: 2em; font-weight: 100;}
+.action-left p{font-size: 1.5em; font-weight: 100;}
+.img-holder img{width: 320px; }
+.action-right{width: 50%; display: flex; justify-content: center;}
 
 .sponsors{
   background-color: var(--stormcloud);
