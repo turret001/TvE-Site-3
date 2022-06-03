@@ -1,8 +1,14 @@
+
+*,*::before,*::after {box-sizing: border-box; margin: 0; padding: 0;}
+
 :root{
   --laurel-green: #A5C195;
   --stormcloud: #517163;
   --asparagus: #3B5847;
 }
+
+
+
 p,h1,h2,h3,h4,h5{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
