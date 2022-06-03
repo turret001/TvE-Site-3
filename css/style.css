@@ -43,9 +43,9 @@ nav{
   margin: 0;
   padding: 0;
 }
+.navbar li{float:left;}
 
-.navbar li{
-  float: left;
+.navbar li:not(:last-child){
   margin-right: 20px;
 }
 .navbar ul:last-child{
@@ -137,7 +137,7 @@ margin-right: 60px;
   background-color: var(--laurel-green);
   display: flex;
   flex-direction: row;
-  height: 50vh;
+  height: 400px;
 }
 .action-left {width: 50%; display: flex; flex-direction: column; justify-content: center; }
 .action-left h2, .action-left h3, .action-left p{color: white; text-align: center;}
@@ -150,7 +150,7 @@ margin-right: 60px;
 
 .sponsors{
   background-color: var(--stormcloud);
-  height: 50vh;
+  height: 480px;
   padding-top: 30px;
 }
 .sponsors h2, .sponsors h3, .sponsors p{color: white; text-align: center;}
@@ -161,10 +161,20 @@ margin-right: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin-top: 60px;
 }
+
+.sponsor-1{
+  text-align: center;
+}
+
 .sponsor-items img {
   width: 100px;
+}
+
+.disabled{
+  display: none;
 }
 
 .topvoters{
@@ -189,6 +199,7 @@ margin-right: 60px;
   .action-left{width: 100%;}
   .about-right{display: none;}
   .about-left{width: 100%;}
+  .server-about{margin-top: 20px;}
   .navbar li a{font-size: x-large}
   .hero-right {display: none;}
   .hero-left {width: 100%}
@@ -199,11 +210,46 @@ margin-right: 60px;
 @media (max-width: 700px){
   .navbar ul:last-child{margin-right: auto;}
 }
-@media (max-width: 635px){
+@media (max-width: 645px){
+  nav{flex-direction: column;}
+  .logo{margin: auto;}
+  .logo-image{align-items: center;}
+  .version-wrapper{align-self: center;}
+}
+@media (max-width: 425px){
   .navbar li a{font-size: large}
+}
+@media (max-width:400px){
+  #join-button{width: 200px; bottom: 145px}
+  .navbar li:not(:last-child){margin-right: 10px;}
 }
 
 
+
+
+#toast {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #E7FEFE; /* Black background color */
+  color: #715F58; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 15px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  right: 10%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#toast.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
 
 
 
